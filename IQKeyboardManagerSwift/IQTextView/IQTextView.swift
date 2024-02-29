@@ -73,7 +73,11 @@ import UIKit
         label.textAlignment = self.textAlignment
         label.backgroundColor = UIColor.clear
         label.isAccessibilityElement = false
-        label.textColor = UIColor.placeholderText
+        #if swift(>=5.1)
+        label.textColor = UIColor.systemGray
+        #else
+        label.textColor = UIColor.lightText
+        #endif
         label.alpha = 0
         self.addSubview(label)
 
